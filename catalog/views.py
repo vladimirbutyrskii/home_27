@@ -19,7 +19,7 @@ class ProductListView(ListView):
 #     context = {'products': products}
 #     return render(request, 'catalog/products_list.html', context)
 
-class ProductDetailView(DetailView):
+class ProductDetailView(LoginRequiredMixin, DetailView):
     model = Product
 
     def get_object(self, queryset=None):
